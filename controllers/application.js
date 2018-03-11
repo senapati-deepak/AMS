@@ -45,7 +45,6 @@ var forward = function(req, res) {
     });
 };
 
-<<<<<<< Updated upstream
 var display =  function(req, res) {
     console.log(req.query.id);
     appModel.findOne({applicationId : req.query.id} , function(err,doc){
@@ -55,7 +54,6 @@ var display =  function(req, res) {
     });
     
 }
-=======
 var appHistory = function(req, res) {
     console.log(req.body);
     var id = req.params.id;
@@ -76,7 +74,6 @@ var appHistory = function(req, res) {
         });
     }
 };
->>>>>>> Stashed changes
 
 module.exports = {
     "submit" : submit ,
