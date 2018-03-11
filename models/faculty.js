@@ -7,7 +7,7 @@ var facultySchema = new Schema({
     email: { "type" : String, required : false },
     gender : { "type" : String , required : false, enum: [ "male", "female", "other" ] } ,
     dept :  {"type" : String , required : false },
-    applications: { type: Schema.Types.ObjectId, ref: 'application' },
+    applications: [{ type: Schema.Types.ObjectId, ref: 'application' }],
     type : { "type" : String , required : false, enum : [ "advisor", "hod", "principal" ] } 
 }); 
 

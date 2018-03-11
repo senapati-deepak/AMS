@@ -9,5 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/submit', application.submit);
+router.post('/accept', application.accept);
+router.post('/reject', application.reject);
+router.post('/forward', application.forward);
 
 module.exports = router;
