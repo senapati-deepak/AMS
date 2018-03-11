@@ -29,8 +29,7 @@ router.get("/faculty_history", function(req, res, next) {
     res.render('pages/faculty_history', { title: 'Faculty Dashboard' });
 });
 
-router.get("/application", function(req, res, next) {
-    res.render('pages/application');
-});
+router.get("/application", application.display);
+router.get("/applicationF", application.displayF);
 
 module.exports = router;
