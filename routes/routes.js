@@ -9,6 +9,10 @@ router.get('/', function(req, res, next) {
 
 router.get("/student", function(req, res, next) {
     res.render('pages/student', { title: 'Student Dashboard' });
-});;
+});
+
+router.get("/application", function(req, res, next) {
+    res.render('pages/application');
+});
 
 module.exports = router;

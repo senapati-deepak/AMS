@@ -5,5 +5,5 @@ var submit = function (req, res) {
 };
 
 module.exports = {
-    "userLogin" : userLogin 
+    "submit" : submit 
 };
