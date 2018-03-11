@@ -20,7 +20,7 @@
     <style>
         .active {
             font-weight: 900;
-            color:#f56a6a !important;
+            color: #f56a6a !important;
         }
     </style>
 </head>
@@ -28,8 +28,12 @@
 <body>
 
     <div style="position: absolute; top: 15px; right: 15px;">
-        <a href="#"><i class="fa fa-bell fa-2x fa-red" style="color:#f56a6a; margin-right: 20px;"></i></a>
-        <a href="#"><i class="fa fa-sign-out fa-2x" style="color:#f56a6a; margin-right: 20px;"></i></a>
+        <a href="#">
+            <i class="fa fa-bell fa-2x fa-red" style="color:#f56a6a; margin-right: 20px;"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-sign-out fa-2x" style="color:#f56a6a; margin-right: 20px;"></i>
+        </a>
     </div>
 
     <!-- Wrapper -->
@@ -51,24 +55,31 @@
                         <thead>
                             <tr>
                                 <th>Application Id</th>
-                                <th>Date of Submission</th>
                                 <th>Due Date</th>
                                 <th>Application Type</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="/application">342423</a></td>
-                                <td>23/23/23</td>
-                                <td>23/23/23</td>
-                                <td>Bonafied</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/application">342423</a></td>
-                                <td>23/23/23</td>
-                                <td>23/23/23</td>
-                                <td>Bonafied</td>
-                            </tr>
+                            <% for(var i=0; i < doc.applications.length ; i++) { %>
+                                <% if(doc.applications[i]["status"] == "accepted"){ %>
+                                    <tr>
+                                        <td>
+                                            <%= doc.applications[i].applicationId %>
+                                        </td>
+                                        <td>
+                                            <%= doc.applications[i].dueDate %>
+                                        </td>
+                                        <td>
+                                            <%= doc.applications[i].type %>
+                                        </td>
+                                        <td>
+                                            <a href="application?id=<%= doc.applications[i].applicationId %>" target="_blank">
+                                                <button class="btn btn-info">click here</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <% }} %>
                         </tbody>
                     </table>
 
@@ -88,8 +99,12 @@
                         <h2>Menu</h2>
                     </header>
                     <ul>
-                        <li><a href="/faculty">Pending Applications</a></li>
-                        <li><a href="/faculty_history" class="active">Application History</a></li>
+                        <li>
+                            <a href="/faculty">Pending Applications</a>
+                        </li>
+                        <li>
+                            <a href="/faculty_history" class="active">Application History</a>
+                        </li>
                     </ul>
                 </nav>
 

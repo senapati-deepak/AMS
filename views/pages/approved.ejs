@@ -49,21 +49,29 @@
                                 <th>Application Id</th>
                                 <th>Date of Submission</th>
                                 <th>Application Type</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="/application">342423</a></td>
-                                <td>23/23/23</td>
-                                <td>Bonafied</td>
-                                </a>
-                            </tr>
-                            <tr>
-                                <td><a href="/application">342423</a></td>
-                                <td>23/23/23</td>
-                                <td>Bonafied</td>
-                                </a>
-                            </tr>
+                            <% for(var i=0; i < doc.applications.length ; i++) { %>
+                                <% if(doc.applications[i]["status"] == "accepted"){ %>
+                                    <tr>
+                                        <td>
+                                            <%= doc.applications[i].applicationId %>
+                                        </td>
+                                        <td>
+                                            <%= doc.applications[i].dueDate %>
+                                        </td>
+                                        <td>
+                                            <%= doc.applications[i].type %>
+                                        </td>
+                                        <td>
+                                            <a href="application?id=<%= doc.applications[i].applicationId %>" target="_blank">
+                                                <button class="btn btn-info">click here</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <% }} %>
                         </tbody>
                     </table>
 
@@ -80,7 +88,9 @@
                 <!-- Menu -->
                 <nav id="menu">
                     <header class="major">
-                        <h2>Menu</h2>
+                        <h2>
+                            <%= doc.name %>
+                        </h2>
                     </header>
                     <ul>
                         <li><a href="/student">New Application</a></li>
