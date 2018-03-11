@@ -1,12 +1,17 @@
 var mongoose = require('mongoose');
 var appModel = require('../models/application');
+var studModel = require('../models/student');
+var facultyModel = require('../models/faculty');
 
 var submit = function (req, res) {
     console.log(req.body);
-    var newApp = new appModel(req.body);
+    var studId = req.body.studId;
+    var newApp = new appModel(req.body.application);
     newApp.save(function(err, doc) {
         if(err) throw err;
-        res.json({ "msg" : "Doc Saved", "doc" : doc });
+        studModel.findOneAndUpdate({ studentId : req.body.studId }, { $push : { applications : req.body.applicationId } }, function(err, doc) {
+            res.json({ "msg" : "Doc Saved And Student Updated...", "doc" : doc });
+        });
     });
 };
 
@@ -40,6 +45,7 @@ var forward = function(req, res) {
     });
 };
 
+<<<<<<< Updated upstream
 var display =  function(req, res) {
     console.log(req.query.id);
     appModel.findOne({applicationId : req.query.id} , function(err,doc){
@@ -49,6 +55,28 @@ var display =  function(req, res) {
     });
     
 }
+=======
+var appHistory = function(req, res) {
+    console.log(req.body);
+    var id = req.params.id;
+    var type = req.params.type;
+    if(type) {
+        facultyModel.find({ facultyId : id })
+        .populate({ path : 'applications' })
+        .exec( function(err, docs) {
+            if(err) throw err;
+            res.json(docs);
+        });
+    } else {
+        studModel.find({ studentId : id })
+        .populate({ path : 'applications' })
+        .exec(function(err, docs) {
+            if(err) throw err;
+            res.json(docs);
+        });
+    }
+};
+>>>>>>> Stashed changes
 
 module.exports = {
     "submit" : submit ,

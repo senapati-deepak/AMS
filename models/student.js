@@ -7,7 +7,7 @@ var studSchema = new Schema({
     email: { "type" : String, required : false },
     gender : { "type" : String , required : false, enum: [ "male", "female", "other" ] } ,
     batch :  {"type" : String , required : false },
-    applications: { type: Schema.Types.ObjectId, ref: 'application' }
+    applications: [{ type: Schema.Types.ObjectId, ref: 'application' }]
 }); 
 
 var studModel = mongoose.model('student', studSchema );
