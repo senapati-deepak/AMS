@@ -6,11 +6,16 @@ var facultyModel = require('../models/faculty');
 var submit = function(req, res) {
     console.log(req.body);
     var studId = req.body.studId;
-    var newApp = new appModel(req.body.application);
+    var applicationId = req.body.applicationId;
+    var newApp = new appModel({applicationId : applicationId, content : req.body.content});
+    var to = req.body.to;
     newApp.save(function(err, doc) {
-        if (err) throw err;
-        studModel.findOneAndUpdate({ studentId: req.body.studId }, { $push: { applications: req.body.applicationId } }, function(err, doc) {
-            res.json({ "msg": "Doc Saved And Student Updated...", "doc": doc });
+        if(err) throw err;
+        studModel.findOneAndUpdate({ studentId : studId }, { $push : { applications : doc._id } }, function(err) {
+            facultyModel.findOneAndUpdate({ facultyId : to }, { $push : { applications : doc._id } }, function(err, doc) {
+                if(err) throw err;
+                res.json(doc);
+            });
         });
     });
 };
