@@ -37,21 +37,23 @@
                     <%= doc.content %>
                 </p>
 
-                status :
+                <b>Status</b> :
                 <%= doc.status %>
+                <br>
+                <% if(doc.statusMsg) {%>
+                    <b>Status Message</b> :
+                    <p>
+                        <%= doc.statusMsg %>
+                    </p>
+                <% } %>
+                    <div><b>Timeline</b> :&nbsp;
+                        <span><%= doc.timeline %>&nbsp;</span>
 
-                    <div>Timeline :&nbsp;
-                        <% for (var i = 0; i < doc.timeline.length; i++) { %>
 
-
-                            <span><%= doc.timeline[i] %>&nbsp;</span>
-
-
-                            <% } %>
                     </div>
 
                     <p>
-                        <i>To be verified by
+                        <i><b>To be verified by :</b>
                         <%= doc.dueDate %>
                     </i>
                     </p>

@@ -5,10 +5,11 @@ $(document).ready(function(){
         var username = $("#logname").val();
         var password = $("#logpass").val();
         console.log(password);
-        if(username === "studentsample" && password === "student"){
-            location.href = "/student";
-        }else{
-            alert("Incorrect username or password!");
+        if(username === "rkpattnaik780" && password === "student"){
+            location.href = "./student";}
+        else if(username === "tkchoudhary")
+        {
+            location.href = "./faculty"
         }
     });
     $("#regform").submit(function(e){

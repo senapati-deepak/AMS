@@ -54,7 +54,7 @@
                         </thead>
                         <tbody>
                             <% for(var i=0; i < doc.applications.length ; i++) { %>
-                                <% if(doc.applications[i]["status"] == "accepted"){ %>
+                                <% if(doc.applications[i]["status"] !== "pending"){ %>
                                     <tr>
                                         <td>
                                             <%= doc.applications[i].applicationId %>

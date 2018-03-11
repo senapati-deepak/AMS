@@ -41,17 +41,15 @@
                 <%= doc.status %>
 
                     <div>Timeline :&nbsp;
-                        <% for (var i = 0; i < doc.timeline.length; i++) { %>
 
 
-                            <span><%= doc.timeline[i] %>&nbsp;</span>
+                            <span><%= doc.timeline %>&nbsp;</span>
 
 
-                            <% } %>
                     </div>
 
                     <p>
-                        <i>To be verified by
+                        <i><b>To be verified by</b>
                         <%= doc.dueDate %>
                     </i>
                     </p>
@@ -60,7 +58,7 @@
                     <textarea class="form-control" rows="3" id="comment" style="border: black 1px solid;"></textarea>
                 </div><br>
                 <button class="btn btn-primary" id="accept" >Accept</button>
-                <button class="btn btn-primary" id="decline" >Decline</button>
+                <button class="btn btn-primary" id="reject" >Decline</button>
                 <br><br>
                 <button class="btn btn-primary" id="printbtn">Print Application</button>
             </div>

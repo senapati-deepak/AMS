@@ -13,7 +13,7 @@ var submit = function(req, res) {
         if(err) throw err;
         studModel.findOneAndUpdate({ studentId : studId }, { $push : { applications : doc._id } }, function(err) {
             facultyModel.findOneAndUpdate({ facultyId : to }, { $push : { applications : doc._id } }, function(err, doc) {
-                if(err) throw err;
+                if(err) throw err; 
                 res.json(doc);
             });
         });
@@ -33,6 +33,7 @@ var accept = function(req, res) {
 var reject = function(req, res) {
     console.log(req.body);
     var id = req.body.id;
+    var msg = req.body.msg;
     appModel.findOneAndUpdate({ applicationId: id }, { $set: { status: "rejected", statusMsg: msg } }, function(err, doc) {
         if (err) throw err;
         res.json({ "msg": "Rejected", doc: doc });
