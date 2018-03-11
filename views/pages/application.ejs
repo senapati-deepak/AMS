@@ -26,17 +26,36 @@
                 <!-- Header -->
                 <header id="header">
 
-                    <h2 id="content">Sample Content</h2>
+                    <h2 id="content">
+                        <%= doc.type %>
+                    </h2>
 
                 </header>
 
                 <br>
-                <p>Praesent ac adipiscing ullamcorper semper ut amet ac risus. Lorem sapien ut odio odio nunc. Ac adipiscing
-                    nibh porttitor erat risus justo adipiscing adipiscing amet placerat accumsan. Vis. Faucibus odio magna
-                    tempus adipiscing a non. In mi primis arcu ut non accumsan vivamus ac blandit adipiscing adipiscing arcu
-                    metus praesent turpis eu ac lacinia nunc ac commodo gravida adipiscing eget accumsan ac nunc adipiscing
-                    adipiscing lorem ipsum dolor sit amet nullam veroeros adipiscing.</p>
+                <p>
+                    <%= doc.content %>
+                </p>
+                
+                  status :   <%= doc.status %>
+                
+                <div>Timeline :&nbsp;
+                    <% for (var i = 0; i < doc.timeline.length; i++) { %>
 
+
+                        <span><%= doc.timeline[i] %>&nbsp;</span>
+
+
+                    <% } %>
+                </div>
+
+                <p>
+                    <i>To be verified by
+                        <%= doc.dueDate %>
+                    </i>
+                </p>
+
+                <button class="btn btn-primary" id="printbtn">Print</button>
             </div>
         </div>
     </div>
@@ -48,6 +67,7 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+    <script src="./javascripts/application.js"></script>
 
 </body>
 

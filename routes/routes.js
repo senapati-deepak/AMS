@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+
+var application = require('../controllers/application');
 //var studentLogin = require("../controllers/studentlogin");
 
 /* GET home page. */

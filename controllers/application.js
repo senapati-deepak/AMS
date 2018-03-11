@@ -40,6 +40,20 @@ var forward = function(req, res) {
     });
 };
 
+var display =  function(req, res) {
+    console.log(req.query.id);
+    appModel.findOne({applicationId : req.query.id} , function(err,doc){
+        if(doc){
+            res.render('pages/application', {"doc" : doc})
+        }
+    });
+    
+}
+
 module.exports = {
-    "submit" : submit 
+    "submit" : submit ,
+    "display" : display,
+    "forward" : forward,
+    "reject" : reject,
+    "accept" : accept
 };
