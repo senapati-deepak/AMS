@@ -21,6 +21,14 @@ router.get("/approved", function(req, res, next) {
     res.render('pages/approved', { title: 'Student Dashboard' });
 });
 
+router.get("/faculty", function(req, res, next) {
+    res.render('pages/faculty', { title: 'Faculty Dashboard' });
+});
+
+router.get("/faculty_history", function(req, res, next) {
+    res.render('pages/faculty_history', { title: 'Faculty Dashboard' });
+});
+
 router.get("/application", function(req, res, next) {
     res.render('pages/application');
 });

@@ -7,19 +7,22 @@
 <html>
 
 <head>
-    <title>Student Dashboard</title>
+    <title>Faculty Dashboard</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <style>
-            .active {
-                font-weight: 900;
-                color:#f56a6a !important;
-            }
-        </style>
+        .active {
+            font-weight: 900;
+            color:#f56a6a !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,7 +42,7 @@
                 <!-- Content -->
                 <section>
                     <header class="main">
-                        <h1>Pending Application</h1>
+                        <h1>Application History</h1>
                     </header>
 
                     <hr class="major" />
@@ -49,6 +52,7 @@
                             <tr>
                                 <th>Application Id</th>
                                 <th>Date of Submission</th>
+                                <th>Due Date</th>
                                 <th>Application Type</th>
                             </tr>
                         </thead>
@@ -56,17 +60,18 @@
                             <tr>
                                 <td><a href="/application">342423</a></td>
                                 <td>23/23/23</td>
+                                <td>23/23/23</td>
                                 <td>Bonafied</td>
-                                </a>
                             </tr>
                             <tr>
                                 <td><a href="/application">342423</a></td>
                                 <td>23/23/23</td>
+                                <td>23/23/23</td>
                                 <td>Bonafied</td>
-                                </a>
                             </tr>
                         </tbody>
                     </table>
+
 
                 </section>
 
@@ -83,9 +88,8 @@
                         <h2>Menu</h2>
                     </header>
                     <ul>
-                        <li><a href="/student">New Application</a></li>
-                        <li><a href="/pending" class="active">Pending Applications</a></li>
-                        <li><a href="/approved">Applications History</a></li>
+                        <li><a href="/faculty">Pending Applications</a></li>
+                        <li><a href="/faculty_history" class="active">Application History</a></li>
                     </ul>
                 </nav>
 

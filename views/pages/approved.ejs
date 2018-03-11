@@ -14,13 +14,19 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <style>
+            .active {
+                font-weight: 900;
+                color:#f56a6a !important;
+            }
+        </style>
 </head>
 
 <body>
 
     <div style="position: absolute; top: 15px; right: 15px;">
-        <i class="fa fa-bell fa-2x fa-red" style="color:#f56a6a; margin-right: 20px;"></i>
-        <i class="fa fa-sign-out fa-2x" style="color:#f56a6a;"></i>
+        <a href="#"><i class="fa fa-bell fa-2x fa-red" style="color:#f56a6a; margin-right: 20px;"></i></a>
+        <a href="#"><i class="fa fa-sign-out fa-2x" style="color:#f56a6a; margin-right: 20px;"></i></a>
     </div>
     <!-- Wrapper -->
     <div id="wrapper">
@@ -47,13 +53,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="application">342423</a></td>
+                                <td><a href="/application">342423</a></td>
                                 <td>23/23/23</td>
                                 <td>Bonafied</td>
                                 </a>
                             </tr>
                             <tr>
-                                <td><a href="application">342423</a></td>
+                                <td><a href="/application">342423</a></td>
                                 <td>23/23/23</td>
                                 <td>Bonafied</td>
                                 </a>
@@ -79,7 +85,7 @@
                     <ul>
                         <li><a href="/student">New Application</a></li>
                         <li><a href="/pending">Pending Applications</a></li>
-                        <li><a href="/approved">Approved Applications</a></li>
+                        <li><a href="/approved" class="active">Applications History</a></li>
                     </ul>
                 </nav>
 
